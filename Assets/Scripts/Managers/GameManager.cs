@@ -1,10 +1,12 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject CarrotPrefab;
+    public int carrotCount = 16;
+
     internal Rabbit hoveredRabbit;
     internal Rabbit selectedRabbit;
 
@@ -13,6 +15,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     private TileHighlightController[,] tileGrid;
+    internal Carrot[,] carrotGrid;
 
     private const int tileCountX = 18;
     private const int tileCountY = 14;
@@ -21,6 +24,11 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         tileGrid = new TileHighlightController[tileCountX, tileCountY];
+    }
+
+    private void Start()
+    {
+        InitCarrotGrid();
     }
 
     void Update()
@@ -37,6 +45,37 @@ public class GameManager : MonoBehaviour
         }
 
         UpdatePathTiles();
+    }
+
+    private void InitCarrotGrid()
+    {
+        carrotGrid = new Carrot[tileCountX, tileCountY];
+
+        for (int i = 0; i < carrotCount; i++)
+        {
+
+            int carrotX, carrotY;
+            do
+            {
+                carrotX = Random.Range(0, 8);
+                carrotY = Random.Range(0, 8);
+
+                if (carrotX >= 4) carrotX += 2;
+                if (carrotY >= 4) carrotY += 2;
+
+                carrotX += 2;
+                carrotY += 2;
+
+            } while (carrotGrid[carrotX, carrotY] != null);
+
+            GameObject newCarrot = Instantiate(CarrotPrefab);
+            var carrotBehavior = newCarrot.GetComponent<Carrot>();
+            carrotBehavior.SetLocation(carrotX, carrotY);
+
+            newCarrot.transform.position = tileGrid[carrotX, carrotY].transform.position;
+
+            carrotGrid[carrotX, carrotY] = carrotBehavior;
+        }
     }
 
     private void UpdatePathTiles()
@@ -64,7 +103,7 @@ public class GameManager : MonoBehaviour
                 int xDif = targetX - rabbitX;
                 int yDif = targetY - rabbitY;
 
-                bool horizontalFirst = MathF.Abs(xDif) > MathF.Abs(yDif);
+                bool horizontalFirst = Mathf.Abs(xDif) > Mathf.Abs(yDif);
 
                 int curX = rabbitX;
                 int curY = rabbitY;
@@ -189,7 +228,7 @@ public class GameManager : MonoBehaviour
     {
         int layerMask = LayerMask.GetMask("Rabbit");
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, layerMask);
-        
+
         if (hit.collider != null && hit.collider.CompareTag("Rabbit"))
         {
             HoverRabbit(hit.collider.GetComponent<Rabbit>());

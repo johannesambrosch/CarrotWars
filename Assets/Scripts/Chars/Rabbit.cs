@@ -19,6 +19,7 @@ public class Rabbit : MonoBehaviour
     public States currentState = States.idle;
 
     public float timePerFieldMove = 1f;
+    public float eatTime = 1f;
 
     public enum States
     {
@@ -57,22 +58,38 @@ public class Rabbit : MonoBehaviour
     {
         if (collision.CompareTag("Shovel"))
         {
-            if (GameManager.instance.selectedRabbit == this)
-            {
-                GameManager.instance.DeselectRabbit();
-            }
-            if (GameManager.instance.hoveredRabbit == this)
-            {
-                GameManager.instance.UnhoverRabbit();
-            }
-            GetComponent<BoxCollider2D>().enabled = false;
+            DisableMe();
+
             currentState = States.smacked;
-            if (currentMoveCoroutine != null)
-            {
-                StopCoroutine(currentMoveCoroutine);
-            }
             animator.SetTrigger("smack");
         }
+    }
+
+    private void DisableMe()
+    {
+        if (GameManager.instance.selectedRabbit == this)
+        {
+            GameManager.instance.DeselectRabbit();
+        }
+        if (GameManager.instance.hoveredRabbit == this)
+        {
+            GameManager.instance.UnhoverRabbit();
+        }
+
+        GetComponent<BoxCollider2D>().enabled = false;
+
+        if (currentMoveCoroutine != null)
+        {
+            StopCoroutine(currentMoveCoroutine);
+        }
+    }
+
+    public void GetShot()
+    {
+        DisableMe();
+
+        currentState = States.shot;
+        animator.SetTrigger("shot");
     }
 
     internal void SetHoverState(bool hovered)
@@ -119,7 +136,18 @@ public class Rabbit : MonoBehaviour
                 yield return null;
             }
             lockedPath.RemoveAt(0);
+
+            var carrot = GameManager.instance.carrotGrid[location.x, location.y];
+            if (carrot != null)
+            {
+                currentState = States.eat;
+                animator.SetTrigger("eat");
+                yield return new WaitForSeconds(eatTime);
+                carrot.Remove();
+            }
         }
+        currentState = States.idle;
+        animator.SetTrigger("idle");
     }
 
     private void UpdateState(Vector2 moveDirection)

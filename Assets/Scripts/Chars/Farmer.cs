@@ -20,6 +20,8 @@ public class Farmer : MonoBehaviour
     private LookDirections currentLookDirection = LookDirections.right;
     private States currentState = States.idle;
 
+    private bool hasShovel = true;
+
     private enum LookDirections
     {
         left,
@@ -149,12 +151,21 @@ public class Farmer : MonoBehaviour
         if (currentState == States.attacking)
             return;
 
-        StartCoroutine(AttackCoroutine(currentLookDirection));
+        if (hasShovel)
+            StartCoroutine(SmackCoroutine(currentLookDirection));
+        else
+            StartCoroutine(ShootCoroutine(currentLookDirection));
     }
 
     private void HandlePlayerAction()
     {
-        throw new NotImplementedException();
+        //handle shop proximity etc.
+
+        if (currentState != States.attacking)
+        {
+            hasShovel = !hasShovel;
+            animator.SetBool("hasShovel", hasShovel);
+        }
     }
 
     private void DoWalkMovement()
@@ -178,7 +189,7 @@ public class Farmer : MonoBehaviour
         }
     }
 
-    private IEnumerator AttackCoroutine(LookDirections attackDirection)
+    private IEnumerator SmackCoroutine(LookDirections attackDirection)
     {
         currentState = States.attacking;
         string triggerName;
@@ -214,6 +225,76 @@ public class Farmer : MonoBehaviour
         ShovelColliderRight.SetActive(false);
         ShovelColliderUp.SetActive(false);
         ShovelColliderDown.SetActive(false);
+
+        if (stashedLookDirections.Count > 0)
+        {
+            currentState = States.walking;
+            switch (currentLookDirection)
+            {
+                case LookDirections.left:
+                    triggerName = "walkLeft";
+                    break;
+                case LookDirections.right:
+                    triggerName = "walkRight";
+                    break;
+                case LookDirections.up:
+                    triggerName = "walkUp";
+                    break;
+                case LookDirections.down:
+                    triggerName = "walkDown";
+                    break;
+                default:
+                    break;
+            }
+        }
+        else
+        {
+            triggerName = "idle";
+            currentState = States.idle;
+        }
+
+        animator.SetTrigger(triggerName);
+    }
+
+    private IEnumerator ShootCoroutine(LookDirections attackDirection)
+    {
+        currentState = States.attacking;
+        string triggerName;
+        Vector2 shootDirection;
+
+        switch (attackDirection)
+        {
+            case LookDirections.left:
+                triggerName = "attackLeft";
+                shootDirection = Vector2.left;
+                break;
+            case LookDirections.right:
+                triggerName = "attackRight";
+                shootDirection = Vector2.right;
+                break;
+            case LookDirections.up:
+                triggerName = "attackUp";
+                shootDirection = Vector2.up;
+                break;
+            case LookDirections.down:
+                triggerName = "attackDown";
+                shootDirection = Vector2.down;
+                break;
+            default:
+                triggerName = "attackLeft";
+                shootDirection = Vector2.left;
+                break;
+        }
+        animator.SetTrigger(triggerName);
+
+        int layerMask = LayerMask.GetMask("Rabbit");
+        RaycastHit2D hit = Physics2D.Raycast(rifleAnchor.transform.position, shootDirection, Mathf.Infinity, layerMask);
+        if (hit.collider != null && hit.collider.CompareTag("Rabbit"))
+        {
+            hit.collider.GetComponent<Rabbit>().GetShot();
+        }
+
+        yield return new WaitForSeconds(attackDuration);
 
         if (stashedLookDirections.Count > 0)
         {
