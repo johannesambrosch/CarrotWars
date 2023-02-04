@@ -187,7 +187,7 @@ public class GameManager : MonoBehaviour
 
     private void UpdateRabbitHover()
     {
-        int layerMask = LayerMask.GetMask("Default");
+        int layerMask = LayerMask.GetMask("Rabbit");
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, layerMask);
         
         if (hit.collider != null && hit.collider.CompareTag("Rabbit"))

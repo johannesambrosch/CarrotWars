@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3349150257658448170}
   - component: {fileID: 3349150257658448165}
   - component: {fileID: 5524806179706016765}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rabbit
   m_TagString: Rabbit
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3349150258963071415}
   - component: {fileID: 3349150258963071414}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RabbitHighlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 267199102651049390}
   - component: {fileID: 5589429573491973630}
   - component: {fileID: 3756515478271747486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RabbitModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

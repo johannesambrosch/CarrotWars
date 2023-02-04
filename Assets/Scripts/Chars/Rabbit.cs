@@ -68,7 +68,9 @@ public class Rabbit : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
             currentState = States.smacked;
             if (currentMoveCoroutine != null)
+            {
                 StopCoroutine(currentMoveCoroutine);
+            }
             animator.SetTrigger("smack");
         }
     }
