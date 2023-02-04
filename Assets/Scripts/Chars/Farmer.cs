@@ -12,6 +12,11 @@ public class Farmer : MonoBehaviour
 
     public Animator animator;
 
+    public GameObject ShovelColliderLeft,
+        ShovelColliderUp,
+        ShovelColliderRight,
+        ShovelColliderDown;
+
     private LookDirections currentLookDirection = LookDirections.right;
     private States currentState = States.idle;
 
@@ -182,24 +187,33 @@ public class Farmer : MonoBehaviour
         {
             case LookDirections.left:
                 triggerName = "attackLeft";
+                ShovelColliderLeft.SetActive(true);
                 break;
             case LookDirections.right:
                 triggerName = "attackRight";
+                ShovelColliderRight.SetActive(true);
                 break;
             case LookDirections.up:
                 triggerName = "attackUp";
+                ShovelColliderUp.SetActive(true);
                 break;
             case LookDirections.down:
                 triggerName = "attackDown";
+                ShovelColliderDown.SetActive(true);
                 break;
             default:
                 triggerName = "attackLeft";
+                ShovelColliderLeft.SetActive(true);
                 break;
         }
         animator.SetTrigger(triggerName);
 
         yield return new WaitForSeconds(attackDuration);
 
+        ShovelColliderLeft.SetActive(false);
+        ShovelColliderRight.SetActive(false);
+        ShovelColliderUp.SetActive(false);
+        ShovelColliderDown.SetActive(false);
 
         if (stashedLookDirections.Count > 0)
         {

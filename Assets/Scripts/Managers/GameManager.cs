@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private Rabbit hoveredRabbit;
-    private Rabbit selectedRabbit;
+    internal Rabbit hoveredRabbit;
+    internal Rabbit selectedRabbit;
 
     private bool RabbitIsSelected => selectedRabbit != null;
 
@@ -207,7 +207,7 @@ public class GameManager : MonoBehaviour
         hoveredRabbit = rabbit;
     }
 
-    private void UnhoverRabbit()
+    internal void UnhoverRabbit()
     {
         if (hoveredRabbit == null)
             return;
@@ -222,7 +222,7 @@ public class GameManager : MonoBehaviour
         selectedRabbit.SetSelectState(true);
     }
 
-    private void DeselectRabbit()
+    internal void DeselectRabbit()
     {
         if (selectedRabbit == null)
             return;

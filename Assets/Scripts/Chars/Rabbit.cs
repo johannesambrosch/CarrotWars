@@ -16,11 +16,11 @@ public class Rabbit : MonoBehaviour
 
     internal List<TileHighlightController> lockedPath, suggestedPath;
 
-    public State currentState = State.idle;
+    public States currentState = States.idle;
 
     public float timePerFieldMove = 1f;
 
-    public enum State
+    public enum States
     {
         idle,
         moveLeft,
@@ -43,7 +43,7 @@ public class Rabbit : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -51,6 +51,26 @@ public class Rabbit : MonoBehaviour
         bool highlightVisible = hovered || selected;
         highlightSprite.enabled = highlightVisible;
         highlightSprite.color = selected ? SelectColor : HoverColor;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Shovel"))
+        {
+            if (GameManager.instance.selectedRabbit == this)
+            {
+                GameManager.instance.DeselectRabbit();
+            }
+            if (GameManager.instance.hoveredRabbit == this)
+            {
+                GameManager.instance.UnhoverRabbit();
+            }
+            GetComponent<BoxCollider2D>().enabled = false;
+            currentState = States.smacked;
+            if (currentMoveCoroutine != null)
+                StopCoroutine(currentMoveCoroutine);
+            animator.SetTrigger("smack");
+        }
     }
 
     internal void SetHoverState(bool hovered)
@@ -90,7 +110,7 @@ public class Rabbit : MonoBehaviour
                 float moveProgress = Mathf.InverseLerp(moveStartTime, moveTargetTime, Time.time);
 
                 transform.position = Vector3.Lerp(initialPos, targetPos, moveProgress);
-                if(moveProgress > 0.5f)
+                if (moveProgress > 0.5f)
                 {
                     location = moveTargetTile;
                 }
@@ -105,16 +125,16 @@ public class Rabbit : MonoBehaviour
         if (moveDirection.y == 0)
         {
             if (moveDirection.x > 0)
-                currentState = State.moveRight;
+                currentState = States.moveRight;
             else
-                currentState = State.moveLeft;
+                currentState = States.moveLeft;
         }
         else
         {
             if (moveDirection.y > 0)
-                currentState = State.moveDown;
+                currentState = States.moveDown;
             else
-                currentState = State.moveUp;
+                currentState = States.moveUp;
         }
         animator.SetTrigger(currentState.ToString());
     }

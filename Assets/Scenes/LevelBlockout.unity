@@ -811,6 +811,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farmer
       objectReference: {fileID: 0}
+    - target: {fileID: 8385919849295115477, guid: 0efc6832ebe883548820875733694696, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f5eae1bb6c7569d47aa67535cdc1d7cd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0efc6832ebe883548820875733694696, type: 3}
 --- !u!95 &4343729286551614884 stripped
