@@ -7,6 +7,8 @@ public class TileHighlightController : MonoBehaviour
 {
     public int horizontalIndex, verticalIndex;
 
+    public Color suggestedPathColor, lockedPathColor;
+
     private Image image;
 
     void Start()
@@ -20,8 +22,13 @@ public class TileHighlightController : MonoBehaviour
         
     }
 
-    internal void SetHighlight(bool highlight)
+    internal void SetHover(bool hovered)
     {
-        image.enabled = highlight;
+        image.enabled = hovered;
+    }
+
+    internal void SetHighlightState(bool lockedPath)
+    {
+        image.color = lockedPath ? lockedPathColor : suggestedPathColor;
     }
 }
