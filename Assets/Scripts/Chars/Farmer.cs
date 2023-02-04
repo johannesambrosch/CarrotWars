@@ -6,13 +6,14 @@ using UnityEngine;
 public class Farmer : MonoBehaviour
 {
     public float walkSpeed = 0.1f;
+    public float attackDuration = 0.5f;
 
     public Transform rifleAnchor;
 
     public Animator animator;
 
-    private LookDirections currentLookDirection;
-    private States currentState;
+    private LookDirections currentLookDirection = LookDirections.right;
+    private States currentState = States.idle;
 
     private enum LookDirections
     {
@@ -140,7 +141,10 @@ public class Farmer : MonoBehaviour
 
     private void TryAttack()
     {
-        throw new NotImplementedException();
+        if (currentState == States.attacking)
+            return;
+
+        StartCoroutine(AttackCoroutine(currentLookDirection));
     }
 
     private void HandlePlayerAction()
@@ -167,5 +171,63 @@ public class Farmer : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    private IEnumerator AttackCoroutine(LookDirections attackDirection)
+    {
+        currentState = States.attacking;
+        string triggerName;
+
+        switch (attackDirection)
+        {
+            case LookDirections.left:
+                triggerName = "attackLeft";
+                break;
+            case LookDirections.right:
+                triggerName = "attackRight";
+                break;
+            case LookDirections.up:
+                triggerName = "attackUp";
+                break;
+            case LookDirections.down:
+                triggerName = "attackDown";
+                break;
+            default:
+                triggerName = "attackLeft";
+                break;
+        }
+        animator.SetTrigger(triggerName);
+
+        yield return new WaitForSeconds(attackDuration);
+
+
+        if (stashedLookDirections.Count > 0)
+        {
+            currentState = States.walking;
+            switch (currentLookDirection)
+            {
+                case LookDirections.left:
+                    triggerName = "walkLeft";
+                    break;
+                case LookDirections.right:
+                    triggerName = "walkRight";
+                    break;
+                case LookDirections.up:
+                    triggerName = "walkUp";
+                    break;
+                case LookDirections.down:
+                    triggerName = "walkDown";
+                    break;
+                default:
+                    break;
+            }
+        }
+        else
+        {
+            triggerName = "idle";
+            currentState = States.idle;
+        }
+
+        animator.SetTrigger(triggerName);
     }
 }
