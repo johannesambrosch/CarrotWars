@@ -9,20 +9,31 @@ public class Farmer : MonoBehaviour
 
     public Transform rifleAnchor;
 
-    private enum walkDirection
+    public Animator animator;
+
+    private LookDirections currentLookDirection;
+    private States currentState;
+
+    private enum LookDirections
     {
-        none,
         left,
         right,
         up,
         down
     }
 
-    private List<walkDirection> stashedWalkDirections;
+    private enum States
+    {
+        idle,
+        walking,
+        attacking
+    }
+
+    private List<LookDirections> stashedLookDirections;
 
     void Awake()
     {
-        stashedWalkDirections = new List<walkDirection>();
+        stashedLookDirections = new List<LookDirections>();
     }
 
     private void Update()
@@ -34,42 +45,84 @@ public class Farmer : MonoBehaviour
 
     void FixedUpdate()
     {
-        DoWalk();
+        if (currentState == States.walking)
+            DoWalkMovement();
     }
 
     private void CheckForWalkInputs()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            stashedWalkDirections.Add(walkDirection.left);
+            stashedLookDirections.Add(LookDirections.left);
+            StartWalking();
         }
         else if (Input.GetKeyDown(KeyCode.W))
         {
-            stashedWalkDirections.Add(walkDirection.up);
+            stashedLookDirections.Add(LookDirections.up);
+            StartWalking();
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            stashedWalkDirections.Add(walkDirection.right);
+            stashedLookDirections.Add(LookDirections.right);
+            StartWalking();
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            stashedWalkDirections.Add(walkDirection.down);
+            stashedLookDirections.Add(LookDirections.down);
+            StartWalking();
         }
         else if (Input.GetKeyUp(KeyCode.A))
         {
-            stashedWalkDirections.Remove(walkDirection.left);
+            stashedLookDirections.Remove(LookDirections.left);
+            StartWalking();
         }
         else if (Input.GetKeyUp(KeyCode.W))
         {
-            stashedWalkDirections.Remove(walkDirection.up);
+            stashedLookDirections.Remove(LookDirections.up);
+            StartWalking();
         }
         else if (Input.GetKeyUp(KeyCode.D))
         {
-            stashedWalkDirections.Remove(walkDirection.right);
+            stashedLookDirections.Remove(LookDirections.right);
+            StartWalking();
         }
         else if (Input.GetKeyUp(KeyCode.S))
         {
-            stashedWalkDirections.Remove(walkDirection.down);
+            stashedLookDirections.Remove(LookDirections.down);
+            StartWalking();
+        }
+    }
+
+    private void StartWalking()
+    {
+        if (currentState == States.attacking)
+            return;
+
+        currentState = States.walking;
+
+        if (stashedLookDirections.Count > 0)
+        {
+            currentLookDirection = stashedLookDirections[stashedLookDirections.Count - 1];
+            switch (currentLookDirection)
+            {
+                case LookDirections.left:
+                    animator.SetTrigger("walkLeft");
+                    break;
+                case LookDirections.right:
+                    animator.SetTrigger("walkRight");
+                    break;
+                case LookDirections.up:
+                    animator.SetTrigger("walkUp");
+                    break;
+                case LookDirections.down:
+                    animator.SetTrigger("walkDown");
+                    break;
+            }
+        }
+        else
+        {
+            currentState = States.idle;
+            animator.SetTrigger("idle");
         }
     }
 
@@ -77,7 +130,7 @@ public class Farmer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            TryShoot();
+            TryAttack();
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -85,7 +138,7 @@ public class Farmer : MonoBehaviour
         }
     }
 
-    private void TryShoot()
+    private void TryAttack()
     {
         throw new NotImplementedException();
     }
@@ -95,29 +148,24 @@ public class Farmer : MonoBehaviour
         throw new NotImplementedException();
     }
 
-    private void DoWalk()
+    private void DoWalkMovement()
     {
-        if (stashedWalkDirections.Count > 0)
+        switch (currentLookDirection)
         {
-            walkDirection curDirection = stashedWalkDirections[stashedWalkDirections.Count - 1];
-
-            switch (curDirection)
-            {
-                case walkDirection.left:
-                case walkDirection.right:
-                    float horizontalMovement = Input.GetAxis("Horizontal");
-                    horizontalMovement = horizontalMovement * walkSpeed;
-                    transform.Translate(new Vector3(horizontalMovement, 0, 0));
-                    break;
-                case walkDirection.up:
-                case walkDirection.down:
-                    float verticalMovement = Input.GetAxis("Vertical");
-                    verticalMovement = verticalMovement * walkSpeed;
-                    transform.Translate(new Vector3(0, verticalMovement, 0));
-                    break;
-                default:
-                    break;
-            }
+            case LookDirections.left:
+            case LookDirections.right:
+                float horizontalMovement = Input.GetAxis("Horizontal");
+                horizontalMovement = horizontalMovement * walkSpeed;
+                transform.Translate(new Vector3(horizontalMovement, 0, 0));
+                break;
+            case LookDirections.up:
+            case LookDirections.down:
+                float verticalMovement = Input.GetAxis("Vertical");
+                verticalMovement = verticalMovement * walkSpeed;
+                transform.Translate(new Vector3(0, verticalMovement, 0));
+                break;
+            default:
+                break;
         }
     }
 }
