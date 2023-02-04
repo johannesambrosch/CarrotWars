@@ -17,20 +17,6 @@ public class GameManager : MonoBehaviour
     private const int tileCountX = 18;
     private const int tileCountY = 14;
 
-    private enum State
-    {
-        idle,
-        moveLeft,
-        moveUp,
-        moveRight,
-        moveDown,
-        eat,
-        smacked,
-        shot,
-        runOver,
-        win
-    }
-
     void Awake()
     {
         instance = this;
@@ -65,8 +51,8 @@ public class GameManager : MonoBehaviour
 
         if (hit.collider != null && hit.collider.CompareTag("Tile"))
         {
-            int rabbitX = selectedRabbit.posX;
-            int rabbitY = selectedRabbit.posY;
+            int rabbitX = selectedRabbit.location.x;
+            int rabbitY = selectedRabbit.location.y;
             var targetTile = hit.collider.GetComponent<TileHighlightController>();
             int targetX = targetTile.horizontalIndex;
             int targetY = targetTile.verticalIndex;
@@ -136,7 +122,10 @@ public class GameManager : MonoBehaviour
         //check if we want to also display a path suggestion
         bool displaySuggestion = suggestionFound;
 
-        if (selectedRabbit.lockedPath != null && selectedRabbit.lockedPath.Count > 0)
+        if (
+            selectedRabbit.lockedPath != null
+            && selectedRabbit.suggestedPath != null
+            && selectedRabbit.lockedPath.Count > 0)
         {
             //if the hovered tile is already the locked target, no need to display suggestion path
             var lockedTarget = selectedRabbit.lockedPath[selectedRabbit.lockedPath.Count - 1];
@@ -198,8 +187,9 @@ public class GameManager : MonoBehaviour
 
     private void UpdateRabbitHover()
     {
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-
+        int layerMask = LayerMask.GetMask("Default");
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, layerMask);
+        
         if (hit.collider != null && hit.collider.CompareTag("Rabbit"))
         {
             HoverRabbit(hit.collider.GetComponent<Rabbit>());

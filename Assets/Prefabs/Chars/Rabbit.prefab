@@ -47,9 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df82ebe8f8691874aadaca9e44103154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 3756515478271747486}
   highlightSprite: {fileID: 3349150258963071414}
   HoverColor: {r: 0.03137255, g: 0.8901961, b: 1, a: 1}
   SelectColor: {r: 1, g: 0.9559247, b: 0.4481132, a: 1}
+  location: {x: 0, y: 0}
+  currentState: 0
+  timePerFieldMove: 1
 --- !u!61 &3349150257658448165
 BoxCollider2D:
   m_ObjectHideFlags: 0

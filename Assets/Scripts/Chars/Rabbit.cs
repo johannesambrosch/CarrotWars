@@ -5,18 +5,41 @@ using UnityEngine;
 
 public class Rabbit : MonoBehaviour
 {
+    // public
+
     public Animator animator;
     public SpriteRenderer highlightSprite;
 
     public Color HoverColor, SelectColor;
 
-    public int posX, posY;
-
-    private bool selected = false, hovered = false;
+    public Vector2Int location;
 
     internal List<TileHighlightController> lockedPath, suggestedPath;
 
-    private Coroutine currentMove;
+    public State currentState = State.idle;
+
+    public float timePerFieldMove = 1f;
+
+    public enum State
+    {
+        idle,
+        moveLeft,
+        moveUp,
+        moveRight,
+        moveDown,
+        eat,
+        smacked,
+        shot,
+        runOver,
+        win
+    }
+
+    //private
+
+    private bool selected = false, hovered = false;
+    private Vector2Int moveStartTile, moveTargetTile;
+    private Coroutine currentMoveCoroutine;
+
 
     void Start()
     {
@@ -44,14 +67,55 @@ public class Rabbit : MonoBehaviour
     {
         lockedPath = suggestedPath;
 
-        if (currentMove != null)
-            StopCoroutine(currentMove);
+        if (currentMoveCoroutine != null)
+            StopCoroutine(currentMoveCoroutine);
 
-        currentMove = StartCoroutine(MoveCoroutine());
+        currentMoveCoroutine = StartCoroutine(MoveCoroutine());
     }
 
     private IEnumerator MoveCoroutine()
     {
-        yield return null;
+        while (lockedPath.Count > 0)
+        {
+            moveStartTile = location;
+            moveTargetTile = lockedPath[0].Location;
+            Vector3 initialPos = transform.position;
+            Vector3 targetPos = lockedPath[0].transform.position;
+            Vector2 moveDirection = moveTargetTile - moveStartTile;
+            UpdateState(moveDirection);
+            float moveStartTime = Time.time;
+            float moveTargetTime = Time.time + timePerFieldMove;
+            while (Time.time < moveTargetTime)
+            {
+                float moveProgress = Mathf.InverseLerp(moveStartTime, moveTargetTime, Time.time);
+
+                transform.position = Vector3.Lerp(initialPos, targetPos, moveProgress);
+                if(moveProgress > 0.5f)
+                {
+                    location = moveTargetTile;
+                }
+                yield return null;
+            }
+            lockedPath.RemoveAt(0);
+        }
+    }
+
+    private void UpdateState(Vector2 moveDirection)
+    {
+        if (moveDirection.y == 0)
+        {
+            if (moveDirection.x > 0)
+                currentState = State.moveRight;
+            else
+                currentState = State.moveLeft;
+        }
+        else
+        {
+            if (moveDirection.y > 0)
+                currentState = State.moveDown;
+            else
+                currentState = State.moveUp;
+        }
+        animator.SetTrigger(currentState.ToString());
     }
 }

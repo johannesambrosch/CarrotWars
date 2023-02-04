@@ -10,6 +10,7 @@ public class TileHighlightController : MonoBehaviour
     public Color suggestedPathColor, lockedPathColor;
 
     private Image image;
+    internal Vector2Int Location => new Vector2Int(horizontalIndex,verticalIndex);
 
     void Start()
     {
