@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public int livesFarmer = 3, livesRabbits = 3;
 
+    public List<GameObject> carrotIcons, rabbitHeadIcons;
+
     public enum States
     {
         Preparation,
@@ -44,11 +46,13 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         tileGrid = new TileHighlightController[tileCountX, tileCountY];
+
     }
 
     private void Start()
     {
         ChangeStates(States.Preparation);
+        UpdateCarrotDisplay();
     }
 
     void Update()
@@ -65,6 +69,11 @@ public class GameManager : MonoBehaviour
         }
 
         UpdatePathTiles();
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Farmer.instance.carrotCount = 8;
+        }
     }
 
     private void ChangeStates(States state)
@@ -228,6 +237,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    internal void UpdateCarrotDisplay()
+    {
+        for(int i = 0; i < carrotIcons.Count; i++)
+        {
+            bool visible = Farmer.instance.carrotCount > i;
+            carrotIcons[i].SetActive(visible);
+        }
+    }
+
     private bool CheckForPathSuggestion(int rabbitX, int rabbitY, int targetX, int targetY)
     {
         var suggestionFound = false;
@@ -288,6 +306,11 @@ public class GameManager : MonoBehaviour
         }
 
         return suggestionFound;
+    }
+
+    internal void UpdateWeaponDisplay(bool hasShovelEquipped, bool hasGunInInventory)
+    {
+        throw new System.NotImplementedException();
     }
 
     private void ClearTileHighlight()
@@ -391,7 +414,7 @@ public class GameManager : MonoBehaviour
         Farmer.instance.DoReset();
 
         //Todo: count left carrots
-        Debug.Log(Carrot.allCarrots.Count);
+        Farmer.instance.GainCarrots(Carrot.allCarrots.Count);
 
         while(Carrot.allCarrots.Count > 0)
         {

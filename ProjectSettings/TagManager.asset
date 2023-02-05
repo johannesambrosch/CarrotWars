@@ -22,8 +22,8 @@ TagManager:
   - Water
   - UI
   - Rabbit
-  - 
-  - 
+  - Tractor
+  - TractorBounds
   - 
   - 
   - 
@@ -48,6 +48,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 434841101
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

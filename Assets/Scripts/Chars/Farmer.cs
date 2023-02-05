@@ -18,6 +18,10 @@ public class Farmer : MonoBehaviour
     private float stamina = 1f;
     public float staminaRegenDuration = 3f;
 
+    public GameObject ammoShellsDisplay;
+    public List<GameObject> ammoShells;
+    private int ammo = 0;
+
     public GameObject ShovelColliderLeft,
         ShovelColliderUp,
         ShovelColliderRight,
@@ -26,9 +30,11 @@ public class Farmer : MonoBehaviour
     private LookDirections currentLookDirection = LookDirections.right;
     private States currentState = States.idle;
 
-    private bool hasShovel = true;
+    private bool hasShovelEquipped = true;
 
     private Vector3 originalPosition;
+
+    private bool isDriving = false;
 
 
     private enum LookDirections
@@ -47,6 +53,13 @@ public class Farmer : MonoBehaviour
     }
 
     private List<LookDirections> stashedLookDirections;
+    internal bool tractorSelected = false;
+    internal int carrotCount = 0;
+    internal bool gasStationSelected = false;
+    internal bool gunStoreSelected = false;
+    private bool hasGunInInventory = false;
+    private const int maxCarrots = 8;
+    internal float fuelLeft = 0f;
 
     void Awake()
     {
@@ -199,23 +212,75 @@ public class Farmer : MonoBehaviour
         if (currentState == States.attacking)
             return;
 
-        stamina = 0f;
 
-        if (hasShovel)
+        if (hasShovelEquipped)
+        {
+            stamina = 0f;
             StartCoroutine(SmackCoroutine(currentLookDirection));
+        }
         else
-            StartCoroutine(ShootCoroutine(currentLookDirection));
+        {
+            if (ammo > 0)
+            {
+                stamina = 0f;
+                ammo--;
+                ammoShells[ammo].SetActive(false);
+                StartCoroutine(ShootCoroutine(currentLookDirection));
+            }
+        }
     }
 
     private void HandlePlayerAction()
     {
-        //handle shop proximity etc.
-
-        if (currentState != States.attacking)
+        if (tractorSelected)
         {
-            hasShovel = !hasShovel;
-            animator.SetBool("hasShovel", hasShovel);
+            Tractor.instance.StartTractor();
+            StartDriving();
         }
+        else if (gasStationSelected)
+        {
+            if (carrotCount >= GasStation.instance.price)
+            {
+                fuelLeft = 1f;
+                carrotCount -= GasStation.instance.price;
+                GameManager.instance.UpdateCarrotDisplay();
+                GasStation.instance.DisableShop();
+            }
+        }
+        else
+        {
+            if (gunStoreSelected)
+            {
+                hasGunInInventory = true;
+                ammo = ammoShells.Count;
+                ammoShells.ForEach((shell) => shell.SetActive(true));
+                GunStore.instance.DisableShop();
+            }
+            if (currentState != States.attacking)
+            {
+                if (!hasGunInInventory && hasShovelEquipped)
+                    return;
+
+                hasShovelEquipped = !hasShovelEquipped;
+                animator.SetBool("hasShovel", hasShovelEquipped);
+
+                ammoShellsDisplay.SetActive(!hasShovelEquipped);
+                GameManager.instance.UpdateWeaponDisplay(hasShovelEquipped, hasGunInInventory);
+            }
+        }
+    }
+
+    private void StartDriving()
+    {
+        isDriving = true;
+        gameObject.SetActive(false);
+    }
+
+    public void StopDriving(Transform tractorPosition)
+    {
+        isDriving = false;
+        gameObject.SetActive(true);
+        transform.position = tractorPosition.position + Vector3.left;
     }
 
     private void DoWalkMovement()
@@ -245,7 +310,7 @@ public class Farmer : MonoBehaviour
         transform.position = originalPosition;
         stashedLookDirections = new List<LookDirections>();
         currentState = States.idle;
-        hasShovel = true;
+        hasShovelEquipped = true;
         animator.SetBool("hasShovel", true);
         animator.SetTrigger("idle");
     }
@@ -385,5 +450,14 @@ public class Farmer : MonoBehaviour
         }
 
         animator.SetTrigger(triggerName);
+    }
+
+    internal void GainCarrots(int numCarrots)
+    {
+        carrotCount += numCarrots;
+        if (carrotCount > maxCarrots)
+        {
+            carrotCount = maxCarrots;
+        }
     }
 }

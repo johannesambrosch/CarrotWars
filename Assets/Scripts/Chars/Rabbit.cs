@@ -61,6 +61,14 @@ public class Rabbit : MonoBehaviour
             currentState = States.smacked;
             animator.SetTrigger("smack");
         }
+
+        if (collision.CompareTag("Tractor"))
+        {
+            DisableMe();
+
+            currentState = States.runOver;
+            animator.SetTrigger("smack");
+        }
     }
 
     private void DisableMe()

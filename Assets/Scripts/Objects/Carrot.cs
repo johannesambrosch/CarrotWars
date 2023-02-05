@@ -36,6 +36,6 @@ public class Carrot : MonoBehaviour
             GameManager.instance.OnRabbitRoundWin();
         }
 
-        DestroyImmediate(gameObject);
+        Destroy(gameObject);
     }
 }
