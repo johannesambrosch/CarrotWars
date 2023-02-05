@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> carrotIcons, rabbitHeadIcons;
 
+    public List<GameObject> farmerLivesIcons, rabbitsLivesIcons;
+
+    public AudioSource winSound;
+
     public enum States
     {
         Preparation,
@@ -42,6 +46,9 @@ public class GameManager : MonoBehaviour
     private const int tileCountX = 18;
     private const int tileCountY = 14;
 
+    public GameObject shovelIcon, rifleIcon;
+
+
     void Awake()
     {
         instance = this;
@@ -52,11 +59,15 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         ChangeStates(States.Preparation);
-        UpdateCarrotDisplay();
     }
 
     void Update()
     {
+        UpdateCarrotDisplay();
+        UpdateBunnyHeadDisplay();
+        UpdateFarmerLiveDisplay();
+        UpdateRabbitLiveDisplay();
+
         UpdateRabbitHover();
 
         if (Input.GetMouseButtonDown(0))
@@ -239,10 +250,37 @@ public class GameManager : MonoBehaviour
 
     internal void UpdateCarrotDisplay()
     {
-        for(int i = 0; i < carrotIcons.Count; i++)
+        for (int i = 0; i < carrotIcons.Count; i++)
         {
             bool visible = Farmer.instance.carrotCount > i;
             carrotIcons[i].SetActive(visible);
+        }
+    }
+
+    internal void UpdateBunnyHeadDisplay()
+    {
+        for (int i = 0; i < rabbitHeadIcons.Count; i++)
+        {
+            bool visible = Rabbit.rabbitPoints > i;
+            rabbitHeadIcons[i].SetActive(visible);
+        }
+    }
+
+    internal void UpdateFarmerLiveDisplay()
+    {
+        for (int i = 0; i < farmerLivesIcons.Count; i++)
+        {
+            bool visible = livesFarmer > i;
+            farmerLivesIcons[i].SetActive(visible);
+        }
+    }
+
+    internal void UpdateRabbitLiveDisplay()
+    {
+        for (int i = 0; i < rabbitsLivesIcons.Count; i++)
+        {
+            bool visible = livesRabbits > i;
+            rabbitsLivesIcons[i].SetActive(visible);
         }
     }
 
@@ -310,7 +348,11 @@ public class GameManager : MonoBehaviour
 
     internal void UpdateWeaponDisplay(bool hasShovelEquipped, bool hasGunInInventory)
     {
-        throw new System.NotImplementedException();
+        rifleIcon.SetActive(hasGunInInventory);
+        var shovelSprite = shovelIcon.GetComponent<SpriteRenderer>();
+        var gunSprite = rifleIcon.GetComponent<SpriteRenderer>();
+        shovelSprite.color = new Color(shovelSprite.color.r, shovelSprite.color.g, shovelSprite.color.b, hasShovelEquipped ? 1f : 0.5f);
+        gunSprite.color = new Color(shovelSprite.color.r, shovelSprite.color.g, shovelSprite.color.b, !hasShovelEquipped ? 1f : 0.5f);
     }
 
     private void ClearTileHighlight()
@@ -411,16 +453,17 @@ public class GameManager : MonoBehaviour
             Tractor.instance.StopTractor();
         }
         livesRabbits--;
-        if(livesRabbits == 0)
+        if (livesRabbits == 0)
         {
             SceneManager.LoadScene("FarmerVictory");
         }
         Farmer.instance.DoReset();
+        winSound.PlayDelayed(1f);
 
         //Todo: count left carrots
         Farmer.instance.GainCarrots(Carrot.allCarrots.Count);
 
-        while(Carrot.allCarrots.Count > 0)
+        while (Carrot.allCarrots.Count > 0)
         {
             Carrot c = Carrot.allCarrots[0];
             c.Remove(true);
@@ -442,7 +485,9 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("RabbitVictory");
         }
         Farmer.instance.DoReset();
+        Rabbit.SetPoints(Rabbit.allRabbits.Count);
         ResetLivingRabbits();
+        winSound.Play();
 
         if (selectedRabbit != null) DeselectRabbit();
         if (hoveredRabbit != null) UnhoverRabbit();

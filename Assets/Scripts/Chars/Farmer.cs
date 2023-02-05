@@ -36,6 +36,8 @@ public class Farmer : MonoBehaviour
 
     private bool isDriving = false;
 
+    public AudioSource gunEmpty, fillFuel, gunEquip, gunShot, shopLocked, shovelEquip, shovelSwing, startTractor;
+
 
     private enum LookDirections
     {
@@ -217,15 +219,21 @@ public class Farmer : MonoBehaviour
         {
             stamina = 0f;
             StartCoroutine(SmackCoroutine(currentLookDirection));
+            shovelSwing.Play();
         }
         else
         {
             if (ammo > 0)
             {
+                gunShot.Play();
                 stamina = 0f;
                 ammo--;
                 ammoShells[ammo].SetActive(false);
                 StartCoroutine(ShootCoroutine(currentLookDirection));
+            }
+            else
+            {
+                gunEmpty.Play();
             }
         }
     }
@@ -236,6 +244,7 @@ public class Farmer : MonoBehaviour
         {
             Tractor.instance.StartTractor();
             StartDriving();
+            startTractor.Play();
         }
         else if (gasStationSelected)
         {
@@ -245,6 +254,7 @@ public class Farmer : MonoBehaviour
                 carrotCount -= GasStation.instance.price;
                 GameManager.instance.UpdateCarrotDisplay();
                 GasStation.instance.DisableShop();
+                fillFuel.Play();
             }
         }
         else
@@ -252,6 +262,7 @@ public class Farmer : MonoBehaviour
             if (gunStoreSelected)
             {
                 hasGunInInventory = true;
+                carrotCount -= GunStore.instance.price;
                 ammo = ammoShells.Count;
                 ammoShells.ForEach((shell) => shell.SetActive(true));
                 GunStore.instance.DisableShop();
@@ -263,6 +274,9 @@ public class Farmer : MonoBehaviour
 
                 hasShovelEquipped = !hasShovelEquipped;
                 animator.SetBool("hasShovel", hasShovelEquipped);
+
+                if (hasShovelEquipped) shovelEquip.Play();
+                else gunEquip.Play();
 
                 ammoShellsDisplay.SetActive(!hasShovelEquipped);
                 GameManager.instance.UpdateWeaponDisplay(hasShovelEquipped, hasGunInInventory);

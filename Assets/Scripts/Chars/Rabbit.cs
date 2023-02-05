@@ -13,6 +13,8 @@ public class Rabbit : MonoBehaviour
     public Color HoverColor, SelectColor;
 
     public static List<Rabbit> allRabbits;
+    public static int rabbitPoints = 0;
+
     public Vector2Int Location { get; private set; }
 
     public Vector2Int initialLocation;
@@ -23,6 +25,8 @@ public class Rabbit : MonoBehaviour
 
     public float timePerFieldMove = 1f;
     public float eatTime = 1f;
+
+    public AudioSource eatSound, dieSound;
 
     public enum States
     {
@@ -81,6 +85,8 @@ public class Rabbit : MonoBehaviour
         {
             GameManager.instance.UnhoverRabbit();
         }
+
+        dieSound.Play();
 
         GetComponent<BoxCollider2D>().enabled = false;
         allRabbits.Remove(this);
@@ -159,6 +165,7 @@ public class Rabbit : MonoBehaviour
             {
                 currentState = States.eat;
                 animator.SetTrigger("eat");
+                eatSound.Play();
                 yield return new WaitForSeconds(eatTime);
                 if (carrot != null)
                 {
@@ -187,5 +194,14 @@ public class Rabbit : MonoBehaviour
                 currentState = States.moveUp;
         }
         animator.SetTrigger(currentState.ToString());
+    }
+
+    internal static void SetPoints(int count)
+    {
+        rabbitPoints += count;
+        if (rabbitPoints > 8)
+        {
+            rabbitPoints = 8;
+        }
     }
 }

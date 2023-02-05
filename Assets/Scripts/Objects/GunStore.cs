@@ -26,6 +26,7 @@ public class GunStore : MonoBehaviour
             else
             {
                 moneyIcon.SetActive(true);
+                Farmer.instance.shopLocked.Play();
             }
         }
     }
