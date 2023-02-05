@@ -12,7 +12,10 @@ public class Rabbit : MonoBehaviour
 
     public Color HoverColor, SelectColor;
 
-    public Vector2Int location;
+    public static List<Rabbit> allRabbits;
+    public Vector2Int Location { get; private set; }
+
+    public Vector2Int initialLocation;
 
     internal List<TileHighlightController> lockedPath, suggestedPath;
 
@@ -40,12 +43,7 @@ public class Rabbit : MonoBehaviour
     private bool selected = false, hovered = false;
     private Vector2Int moveStartTile, moveTargetTile;
     private Coroutine currentMoveCoroutine;
-
-
-    void Start()
-    {
-
-    }
+    
 
     void Update()
     {
@@ -77,11 +75,22 @@ public class Rabbit : MonoBehaviour
         }
 
         GetComponent<BoxCollider2D>().enabled = false;
+        allRabbits.Remove(this);
 
         if (currentMoveCoroutine != null)
         {
             StopCoroutine(currentMoveCoroutine);
         }
+
+        if(allRabbits.Count == 0)
+        {
+            GameManager.instance.OnFarmerRoundWin();
+        }
+    }
+
+    public void SetLocation(int x, int y)
+    {
+        Location = new Vector2Int(x, y);
     }
 
     public void GetShot()
@@ -116,7 +125,7 @@ public class Rabbit : MonoBehaviour
     {
         while (lockedPath.Count > 0)
         {
-            moveStartTile = location;
+            moveStartTile = Location;
             moveTargetTile = lockedPath[0].Location;
             Vector3 initialPos = transform.position;
             Vector3 targetPos = lockedPath[0].transform.position;
@@ -131,19 +140,22 @@ public class Rabbit : MonoBehaviour
                 transform.position = Vector3.Lerp(initialPos, targetPos, moveProgress);
                 if (moveProgress > 0.5f)
                 {
-                    location = moveTargetTile;
+                    Location = moveTargetTile;
                 }
                 yield return null;
             }
             lockedPath.RemoveAt(0);
 
-            var carrot = GameManager.instance.carrotGrid[location.x, location.y];
+            var carrot = GameManager.instance.carrotGrid[Location.x, Location.y];
             if (carrot != null)
             {
                 currentState = States.eat;
                 animator.SetTrigger("eat");
                 yield return new WaitForSeconds(eatTime);
-                carrot.Remove();
+                if (carrot != null)
+                {
+                    carrot.Remove();
+                }
             }
         }
         currentState = States.idle;

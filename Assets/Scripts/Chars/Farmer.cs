@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Farmer : MonoBehaviour
 {
+    public static Farmer instance;
+
     public float walkSpeed = 0.1f;
     public float attackDuration = 0.5f;
 
@@ -21,6 +23,9 @@ public class Farmer : MonoBehaviour
     private States currentState = States.idle;
 
     private bool hasShovel = true;
+
+    private Vector3 originalPosition;
+
 
     private enum LookDirections
     {
@@ -41,15 +46,32 @@ public class Farmer : MonoBehaviour
 
     void Awake()
     {
+        instance = this;
         stashedLookDirections = new List<LookDirections>();
+        originalPosition = transform.position;
     }
 
     private void Update()
     {
-        CheckForWalkInputs();
-        CheckForActionInputs();
+        if (GameManager.instance.currentState == GameManager.States.Preparation
+            || GameManager.instance.currentState == GameManager.States.Game)
+        {
+            CheckForWalkInputs();
+            CheckForActionInputs();
+        }
+        else
+        {
+            animator.ResetTrigger("attackLeft");
+            animator.ResetTrigger("attackRight");
+            animator.ResetTrigger("attackUp");
+            animator.ResetTrigger("attackDown");
+            animator.ResetTrigger("walkLeft");
+            animator.ResetTrigger("walkRight");
+            animator.ResetTrigger("walkUp");
+            animator.ResetTrigger("walkDown");
+            animator.SetTrigger("idle");
+        }
     }
-
 
     void FixedUpdate()
     {
@@ -62,46 +84,57 @@ public class Farmer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             stashedLookDirections.Add(LookDirections.left);
-            StartWalking();
+            StartOrStopWalking();
         }
         else if (Input.GetKeyDown(KeyCode.W))
         {
             stashedLookDirections.Add(LookDirections.up);
-            StartWalking();
+            StartOrStopWalking();
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             stashedLookDirections.Add(LookDirections.right);
-            StartWalking();
+            StartOrStopWalking();
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
             stashedLookDirections.Add(LookDirections.down);
-            StartWalking();
+            StartOrStopWalking();
         }
         else if (Input.GetKeyUp(KeyCode.A))
         {
             stashedLookDirections.Remove(LookDirections.left);
-            StartWalking();
+            StartOrStopWalking();
         }
         else if (Input.GetKeyUp(KeyCode.W))
         {
             stashedLookDirections.Remove(LookDirections.up);
-            StartWalking();
+            StartOrStopWalking();
         }
         else if (Input.GetKeyUp(KeyCode.D))
         {
             stashedLookDirections.Remove(LookDirections.right);
-            StartWalking();
+            StartOrStopWalking();
         }
         else if (Input.GetKeyUp(KeyCode.S))
         {
             stashedLookDirections.Remove(LookDirections.down);
-            StartWalking();
+            StartOrStopWalking();
+        }
+
+        // Sanity check back to idle
+        else if (!Input.GetKey(KeyCode.W)
+            && !Input.GetKey(KeyCode.A)
+            && !Input.GetKey(KeyCode.S)
+            && !Input.GetKey(KeyCode.D)
+            && stashedLookDirections.Count > 0)
+        {
+            stashedLookDirections = new List<LookDirections>();
+            StartOrStopWalking();
         }
     }
 
-    private void StartWalking()
+    private void StartOrStopWalking()
     {
         if (currentState == States.attacking)
             return;
@@ -138,7 +171,10 @@ public class Farmer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            TryAttack();
+            if (GameManager.instance.currentState == GameManager.States.Game)
+            {
+                TryAttack();
+            }
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -187,6 +223,17 @@ public class Farmer : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void DoReset()
+    {
+        StopAllCoroutines();
+        transform.position = originalPosition;
+        stashedLookDirections = new List<LookDirections>();
+        currentState = States.idle;
+        hasShovel = true;
+        animator.SetBool("hasShovel", true);
+        animator.SetTrigger("idle");
     }
 
     private IEnumerator SmackCoroutine(LookDirections attackDirection)

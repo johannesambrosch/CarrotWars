@@ -26,10 +26,16 @@ public class Carrot : MonoBehaviour
         Location = new Vector2Int(x, y);
     }
 
-    public void Remove()
+    public void Remove(bool roundEnded = false)
     {
         allCarrots.Remove(this);
-        GetComponent<SpriteRenderer>().enabled = false;
         GameManager.instance.carrotGrid[Location.x, Location.y] = null;
+
+        if(!roundEnded && allCarrots.Count == 0)
+        {
+            GameManager.instance.OnRabbitRoundWin();
+        }
+
+        DestroyImmediate(gameObject);
     }
 }
