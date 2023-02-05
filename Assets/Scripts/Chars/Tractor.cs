@@ -12,7 +12,7 @@ public class Tractor : MonoBehaviour
 
     private Animator animator;
 
-    private bool isActive = false;
+    internal bool isActive = false;
 
     private LookDirections currentLookDirection = LookDirections.up;
 
@@ -189,7 +189,8 @@ public class Tractor : MonoBehaviour
         animator.SetTrigger("stopEngine");
         fuelBar.SetActive(false);
         killZone.SetActive(false);
+        dirtSplash.SetActive(false);
         isActive = false;
-        //Farmer.instance.
+        Farmer.instance.StopDriving(transform);
     }
 }

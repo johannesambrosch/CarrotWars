@@ -280,7 +280,7 @@ public class Farmer : MonoBehaviour
     {
         isDriving = false;
         gameObject.SetActive(true);
-        transform.position = tractorPosition.position + Vector3.left;
+        transform.position = tractorPosition.position + (Vector3.left * 2);
     }
 
     private void DoWalkMovement()

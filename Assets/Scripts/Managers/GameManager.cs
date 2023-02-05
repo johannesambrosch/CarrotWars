@@ -406,6 +406,10 @@ public class GameManager : MonoBehaviour
 
     public void OnFarmerRoundWin()
     {
+        if (Tractor.instance.isActive)
+        {
+            Tractor.instance.StopTractor();
+        }
         livesRabbits--;
         if(livesRabbits == 0)
         {
@@ -428,6 +432,10 @@ public class GameManager : MonoBehaviour
 
     public void OnRabbitRoundWin()
     {
+        if (Tractor.instance.isActive)
+        {
+            Tractor.instance.StopTractor();
+        }
         livesFarmer--;
         if (livesFarmer == 0)
         {
