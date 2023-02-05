@@ -14,6 +14,10 @@ public class Farmer : MonoBehaviour
 
     public Animator animator;
 
+    public ProgressBar staminaBar;
+    private float stamina = 1f;
+    public float staminaRegenDuration = 3f;
+
     public GameObject ShovelColliderLeft,
         ShovelColliderUp,
         ShovelColliderRight,
@@ -49,6 +53,8 @@ public class Farmer : MonoBehaviour
         instance = this;
         stashedLookDirections = new List<LookDirections>();
         originalPosition = transform.position;
+
+        stamina = staminaRegenDuration;
     }
 
     private void Update()
@@ -71,6 +77,9 @@ public class Farmer : MonoBehaviour
             animator.ResetTrigger("walkDown");
             animator.SetTrigger("idle");
         }
+
+        stamina += Time.deltaTime;
+        staminaBar.SetProgress(Mathf.InverseLerp(0, staminaRegenDuration, stamina));
     }
 
     void FixedUpdate()
@@ -173,7 +182,10 @@ public class Farmer : MonoBehaviour
         {
             if (GameManager.instance.currentState == GameManager.States.Game)
             {
-                TryAttack();
+                if (stamina >= staminaRegenDuration)
+                {
+                    TryAttack();
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.E))
@@ -186,6 +198,8 @@ public class Farmer : MonoBehaviour
     {
         if (currentState == States.attacking)
             return;
+
+        stamina = 0f;
 
         if (hasShovel)
             StartCoroutine(SmackCoroutine(currentLookDirection));
