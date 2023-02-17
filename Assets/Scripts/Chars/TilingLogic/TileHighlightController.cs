@@ -7,20 +7,23 @@ public class TileHighlightController : MonoBehaviour
 {
     public int horizontalIndex, verticalIndex;
 
+    private Animator animator;
+
     public Color suggestedPathColor, lockedPathColor;
 
     private Image image;
-    internal Vector2Int Location => new Vector2Int(horizontalIndex,verticalIndex);
+    internal Vector2Int Location => new Vector2Int(horizontalIndex, verticalIndex);
 
-    void Start()
+    void Awake()
     {
         image = GetComponent<Image>();
         GameManager.instance.RegisterTile(this, horizontalIndex, verticalIndex);
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        
+
     }
 
     internal void SetHover(bool hovered)
@@ -30,6 +33,7 @@ public class TileHighlightController : MonoBehaviour
 
     internal void SetHighlightState(bool lockedPath)
     {
+        animator.SetTrigger(lockedPath ? "select" : "hover");
         image.color = lockedPath ? lockedPathColor : suggestedPathColor;
     }
 }
