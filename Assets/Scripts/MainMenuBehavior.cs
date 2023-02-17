@@ -24,7 +24,7 @@ public class MainMenuBehavior : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Intro");
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void Settings()
