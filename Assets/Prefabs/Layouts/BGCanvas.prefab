@@ -1,5 +1,165 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &548286342860413685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6548387176941294894}
+  - component: {fileID: 1526839942955335607}
+  - component: {fileID: 8277425153463082818}
+  - component: {fileID: 5858160196445034352}
+  - component: {fileID: 2501148909672525941}
+  m_Layer: 5
+  m_Name: middle
+  m_TagString: Tile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6548387176941294894
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548286342860413685}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2669552352162244087}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 6.5, y: 0.5}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1526839942955335607
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548286342860413685}
+  m_CullTransparentMesh: 1
+--- !u!114 &8277425153463082818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548286342860413685}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5858160196445034352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548286342860413685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09107d840f2693448920fd3e344516b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalIndex: 18
+  verticalIndex: 7
+  suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
+  lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 1
+--- !u!61 &2501148909672525941
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548286342860413685}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!1 &702478868134795591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2669552352162244087}
+  m_Layer: 5
+  m_Name: ShopTiles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2669552352162244087
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702478868134795591}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6548387176941294894}
+  - {fileID: 1092916772523200290}
+  - {fileID: 7550162175082319769}
+  m_Father: {fileID: 4469946600532028449}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 5, y: -1}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2075347588320664844
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +189,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4469946600532028449}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -67,7 +227,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4469946600532028449}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -564,6 +724,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600122083258
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -836,6 +997,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600131034540
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1108,6 +1270,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600136557722
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1331,6 +1494,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600138090843
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1527,6 +1691,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600141592612
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1647,6 +1812,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600142910259
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1946,6 +2112,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600154390025
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2294,6 +2461,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600171295712
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2414,6 +2582,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600177561496
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2686,6 +2855,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600187374833
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3034,6 +3204,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600192167840
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3230,6 +3401,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600198717292
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3426,6 +3598,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600207757706
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3546,6 +3719,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600208853156
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3666,6 +3840,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600209174360
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3786,6 +3961,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600211583813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4134,6 +4310,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600221688386
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4433,6 +4610,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600224021180
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4705,6 +4883,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600225315935
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4977,6 +5156,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600235529242
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5504,6 +5684,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600254946369
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6004,6 +6185,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600270256513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6303,6 +6485,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600293123151
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6906,6 +7089,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600306541504
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7205,6 +7389,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600307843234
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7504,6 +7689,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600312282156
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7700,6 +7886,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600315871824
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8303,6 +8490,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600342732077
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8423,6 +8611,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600342929734
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8798,6 +8987,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600357231732
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8918,6 +9108,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600359017940
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9038,6 +9229,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600362961824
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9158,6 +9350,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600375814008
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9354,6 +9547,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600376503777
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9474,6 +9668,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600382400206
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9594,6 +9789,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600384128088
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9866,6 +10062,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600389248965
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10138,6 +10335,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600391826906
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10258,6 +10456,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600392885729
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10709,6 +10908,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600409629066
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10829,6 +11029,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600409952253
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11204,6 +11405,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600414260780
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11324,6 +11526,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600414474858
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11775,6 +11978,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600421449268
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12047,6 +12251,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600432698514
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12167,6 +12372,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600435526314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12466,6 +12672,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600447820245
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12662,6 +12869,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600449640146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12782,6 +12990,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600450616494
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12902,6 +13111,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600454155133
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13022,6 +13232,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600458025561
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13142,6 +13353,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600458921914
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13870,6 +14082,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600476536169
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14066,6 +14279,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600488793454
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14262,6 +14476,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600497871377
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14382,6 +14597,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600507603129
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14681,6 +14897,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600520465255
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14739,6 +14956,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4469946601207319052}
+  - {fileID: 2669552352162244087}
   - {fileID: 4469946602166314920}
   - {fileID: 6309000651394384164}
   - {fileID: 3457444203210863207}
@@ -15210,6 +15428,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600546121926
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15737,6 +15956,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600573208526
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15933,6 +16153,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600583121942
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16053,6 +16274,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600586799042
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16249,6 +16471,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600597036838
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16521,6 +16744,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600603072942
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16869,6 +17093,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600623248668
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17320,6 +17545,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600638590464
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17516,6 +17742,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600641095086
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17636,6 +17863,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600644571099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17756,6 +17984,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600645745472
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18462,6 +18691,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600670268306
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18734,6 +18964,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600679312471
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19158,6 +19389,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600694442931
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19430,6 +19662,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600696744365
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19626,6 +19859,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600699624685
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19898,6 +20132,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600707037178
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20322,6 +20557,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600715057807
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20442,6 +20678,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600716737989
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20638,6 +20875,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600724065727
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20758,6 +20996,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600724668770
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21106,6 +21345,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600729435643
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21378,6 +21618,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600734841149
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21498,6 +21739,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600741774940
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22025,6 +22267,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600759605574
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22905,6 +23148,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600790145222
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23025,6 +23269,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600796850418
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23145,6 +23390,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600797039022
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23341,6 +23587,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600800587864
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23461,6 +23708,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600802018407
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23581,6 +23829,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600802426326
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24184,6 +24433,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600818183903
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24304,6 +24554,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600819860462
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24500,6 +24751,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600824953109
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24620,6 +24872,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600830690403
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24816,6 +25069,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600836401725
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24936,6 +25190,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600837390855
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25208,6 +25463,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600843558239
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25328,6 +25584,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600845671317
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25448,6 +25705,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600846774188
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25568,6 +25826,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600850440157
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25688,6 +25947,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600850534042
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25960,6 +26220,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600861423830
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26232,6 +26493,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600875834151
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26428,6 +26690,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600881673676
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26754,6 +27017,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600883524131
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26874,6 +27138,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600885908062
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27298,6 +27563,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600889780582
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28080,6 +28346,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600937102834
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28276,6 +28543,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600939948404
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28548,6 +28816,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600953676698
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28896,6 +29165,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600961663432
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29244,6 +29514,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600972837401
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29695,6 +29966,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600983322296
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29815,6 +30087,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600986652739
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30114,6 +30387,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600993957077
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30234,6 +30508,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600994737832
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30560,6 +30835,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946600998378555
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30908,6 +31184,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601018874513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31104,6 +31381,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601020123173
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31555,6 +31833,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601038805634
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31751,6 +32030,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601041303509
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32023,6 +32303,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601048314302
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32219,6 +32500,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601049017464
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32491,6 +32773,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601061274187
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32790,6 +33073,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601070381919
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32910,6 +33194,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601070962354
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33410,6 +33695,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601115301588
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33530,6 +33816,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601118657167
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33726,6 +34013,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601120634113
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33846,6 +34134,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601120799599
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33966,6 +34255,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601120987187
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34086,6 +34376,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601122489523
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34358,6 +34649,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601124435276
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34630,6 +34922,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601133594045
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34826,6 +35119,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601142203831
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34946,6 +35240,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601142674352
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35598,6 +35893,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601165059332
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36152,6 +36448,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601174549551
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37548,6 +37845,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601220220227
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37668,6 +37966,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601220955391
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38195,6 +38494,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601242232311
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38798,6 +39098,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601272208220
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38994,6 +39295,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601284261880
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39114,6 +39416,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601284688611
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39310,6 +39613,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601298211027
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39430,6 +39734,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601298457719
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39729,6 +40034,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601308829848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40104,6 +40410,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601316112092
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40376,6 +40683,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601318287707
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40496,6 +40804,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601319721250
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40768,6 +41077,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601329023084
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40888,6 +41198,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601330608809
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41339,6 +41650,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601342290512
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41611,6 +41923,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601347384990
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41731,6 +42044,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601349645142
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41927,6 +42241,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601368090854
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42123,6 +42438,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601369125787
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42726,6 +43042,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601399091214
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43074,6 +43391,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601419432930
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43270,6 +43588,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601440353319
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43390,6 +43709,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601443112360
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43586,6 +43906,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601445814656
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43706,6 +44027,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601448701157
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44054,6 +44376,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601460172841
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44429,6 +44752,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601483360255
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44549,6 +44873,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601483997088
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44745,6 +45070,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601486948456
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44865,6 +45191,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601487191776
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44985,6 +45312,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601491513796
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -45615,6 +45943,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601512865048
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -45887,6 +46216,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601525658193
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46007,6 +46337,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601529997368
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46355,6 +46686,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601536238889
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46475,6 +46807,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601536548557
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46595,6 +46928,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601536812191
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46791,6 +47125,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601541748739
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47470,6 +47805,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601562396939
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47666,6 +48002,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601567164914
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47786,6 +48123,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601567659030
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47982,6 +48320,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601568337259
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -48205,6 +48544,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601577976959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -48808,6 +49148,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601591981048
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49107,6 +49448,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601610336037
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49227,6 +49569,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601610747995
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49754,6 +50097,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601639279964
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49950,6 +50294,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601640103673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50222,6 +50567,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601652739723
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50673,6 +51019,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601668637237
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50793,6 +51140,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601671415431
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50913,6 +51261,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601673371107
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51109,6 +51458,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601677974740
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51305,6 +51655,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601685470200
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51501,6 +51852,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601688332821
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51621,6 +51973,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601697315786
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51741,6 +52094,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601697798220
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51861,6 +52215,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601705018387
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52236,6 +52591,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601715767917
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52356,6 +52712,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601715892911
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52628,6 +52985,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601719894799
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52900,6 +53258,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601723120250
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -53172,6 +53531,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601735980058
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -53292,6 +53652,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601736360719
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -53412,6 +53773,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601736575996
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54145,6 +54507,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601750361638
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -55003,6 +55366,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601768193940
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -55302,6 +55666,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601787693372
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -55422,6 +55787,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601790422172
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -55542,6 +55908,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601793199906
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -55765,6 +56132,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601803173184
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -56091,6 +56459,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601807557395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -56211,6 +56580,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601808872543
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -56407,6 +56777,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601813906773
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -57086,6 +57457,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601843481828
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -57358,6 +57730,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601853584090
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -57554,6 +57927,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601858726402
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -57750,6 +58124,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601864647297
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -58353,6 +58728,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601874144779
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59059,6 +59435,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601897334622
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59559,6 +59936,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601908454544
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59831,6 +60209,7 @@ MonoBehaviour:
   verticalIndex: 11
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601917343532
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59951,6 +60330,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601924499232
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60147,6 +60527,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601927922639
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60343,6 +60724,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601931237609
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60463,6 +60845,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601935166741
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60583,6 +60966,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601938730338
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60703,6 +61087,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601941019862
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60823,6 +61208,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601947903900
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61198,6 +61584,7 @@ MonoBehaviour:
   verticalIndex: 10
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601969671418
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61318,6 +61705,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601972439198
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61438,6 +61826,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601976797285
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61710,6 +62099,7 @@ MonoBehaviour:
   verticalIndex: 4
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601984621838
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62058,6 +62448,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946601989555614
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62688,6 +63079,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602009352599
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62808,6 +63200,7 @@ MonoBehaviour:
   verticalIndex: 9
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602009449939
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62928,6 +63321,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602010845400
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -63531,6 +63925,7 @@ MonoBehaviour:
   verticalIndex: 0
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602031487264
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64340,6 +64735,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602060516415
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64916,6 +65312,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602076145905
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65112,6 +65509,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602079713049
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65335,6 +65733,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602092458943
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65455,6 +65854,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602096343081
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65727,6 +66127,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602102664164
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -66151,6 +66552,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602112460804
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -66651,6 +67053,7 @@ MonoBehaviour:
   verticalIndex: 5
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602148421917
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -66874,6 +67277,7 @@ MonoBehaviour:
   verticalIndex: 7
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602156905115
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -67222,6 +67626,7 @@ MonoBehaviour:
   verticalIndex: 3
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602164915912
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -67605,7 +68010,7 @@ RectTransform:
   - {fileID: 4469946600994737839}
   - {fileID: 4469946602183544730}
   m_Father: {fileID: 4469946600532028449}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -67706,6 +68111,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602166650842
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -68157,6 +68563,7 @@ MonoBehaviour:
   verticalIndex: 13
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602183544731
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -68760,6 +69167,7 @@ MonoBehaviour:
   verticalIndex: 6
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602210871394
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -68956,6 +69364,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602222310484
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -69255,6 +69664,7 @@ MonoBehaviour:
   verticalIndex: 2
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602230695718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -69375,6 +69785,7 @@ MonoBehaviour:
   verticalIndex: 8
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602230792813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -69571,6 +69982,7 @@ MonoBehaviour:
   verticalIndex: 12
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602235176223
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -69691,6 +70103,7 @@ MonoBehaviour:
   verticalIndex: 1
   suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
   lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 0
 --- !u!61 &4469946602238235153
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -69793,6 +70206,248 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4513299586213256595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7550162175082319769}
+  - component: {fileID: 5143197443311638441}
+  - component: {fileID: 9104509325596564779}
+  - component: {fileID: 3150779091140734690}
+  - component: {fileID: 9112576445939160671}
+  m_Layer: 5
+  m_Name: bottom
+  m_TagString: Tile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7550162175082319769
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4513299586213256595}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2669552352162244087}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 6.5, y: -4.5}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5143197443311638441
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4513299586213256595}
+  m_CullTransparentMesh: 1
+--- !u!114 &9104509325596564779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4513299586213256595}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3150779091140734690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4513299586213256595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09107d840f2693448920fd3e344516b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalIndex: 18
+  verticalIndex: 12
+  suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
+  lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 1
+--- !u!61 &9112576445939160671
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4513299586213256595}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!1 &5807371845666192053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1092916772523200290}
+  - component: {fileID: 8419665503270402326}
+  - component: {fileID: 2551718678231677710}
+  - component: {fileID: 8582201771197570742}
+  - component: {fileID: 3839246115114369453}
+  m_Layer: 5
+  m_Name: top
+  m_TagString: Tile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1092916772523200290
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5807371845666192053}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2669552352162244087}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 6.5, y: 4.5}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8419665503270402326
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5807371845666192053}
+  m_CullTransparentMesh: 1
+--- !u!114 &2551718678231677710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5807371845666192053}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8582201771197570742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5807371845666192053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09107d840f2693448920fd3e344516b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalIndex: 18
+  verticalIndex: 3
+  suggestedPathColor: {r: 0, g: 0.9322505, b: 1, a: 1}
+  lockedPathColor: {r: 1, g: 0.95357424, b: 0.5330188, a: 1}
+  doNotRegister: 1
+--- !u!61 &3839246115114369453
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5807371845666192053}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &8179892355262633844
 GameObject:
   m_ObjectHideFlags: 0
@@ -69823,7 +70478,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4469946600532028449}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7155521208330754250
 SpriteRenderer:

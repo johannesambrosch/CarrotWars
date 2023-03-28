@@ -80,11 +80,14 @@ public class GameManager : MonoBehaviour
         }
 
         UpdatePathTiles();
+        CheckShopHover();
 
         if (Input.GetKeyDown(KeyCode.C))
         {
             Farmer.instance.carrotCount = 8;
         }
+
+
     }
 
     private void ChangeStates(States state)
@@ -167,6 +170,21 @@ public class GameManager : MonoBehaviour
             newCarrot.transform.position = tileGrid[carrotX, carrotY].transform.position;
 
             carrotGrid[carrotX, carrotY] = carrotBehavior;
+        }
+    }
+
+    private void CheckShopHover()
+    {
+        int lm = LayerMask.GetMask(new string[] { "Shop" });
+        RaycastHit2D rhit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, lm);
+
+        if (rhit.collider != null)
+        {
+            if (rhit.collider.CompareTag("RabbitShop"))
+            {
+                var store = rhit.collider.GetComponent<BaseRabbitStore>();
+                store.HoverShop();
+            }
         }
     }
 
@@ -523,7 +541,7 @@ public class GameManager : MonoBehaviour
             float progressBarWidth = Mathf.InverseLerp(targetTime, startTime, Time.time);
 
             //TODO: update progressBar
-            Debug.Log(progressBarWidth);
+            //Debug.Log(progressBarWidth);
         }
 
         ChangeStates(States.Game);

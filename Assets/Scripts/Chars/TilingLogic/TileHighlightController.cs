@@ -11,13 +11,15 @@ public class TileHighlightController : MonoBehaviour
 
     public Color suggestedPathColor, lockedPathColor;
 
+    public bool doNotRegister = false;
+
     private Image image;
     internal Vector2Int Location => new Vector2Int(horizontalIndex, verticalIndex);
 
     void Awake()
     {
         image = GetComponent<Image>();
-        GameManager.instance.RegisterTile(this, horizontalIndex, verticalIndex);
+        if(!doNotRegister) GameManager.instance.RegisterTile(this, horizontalIndex, verticalIndex);
         animator = GetComponent<Animator>();
     }
 

@@ -26,6 +26,8 @@ public class Rabbit : MonoBehaviour
     public float timePerFieldMove = 1f;
     public float eatTime = 1f;
 
+    internal bool isSpawnAnim = false;
+
     public AudioSource eatSound, dieSound;
 
     public enum States
@@ -160,21 +162,28 @@ public class Rabbit : MonoBehaviour
             }
             lockedPath.RemoveAt(0);
 
-            var carrot = GameManager.instance.carrotGrid[Location.x, Location.y];
-            if (carrot != null)
+            if (!isSpawnAnim)
             {
-                currentState = States.eat;
-                animator.SetTrigger("eat");
-                eatSound.Play();
-                yield return new WaitForSeconds(eatTime);
+                var carrot = GameManager.instance.carrotGrid[Location.x, Location.y];
                 if (carrot != null)
                 {
-                    carrot.Remove();
+                    currentState = States.eat;
+                    animator.SetTrigger("eat");
+                    eatSound.Play();
+                    yield return new WaitForSeconds(eatTime);
+                    if (carrot != null)
+                    {
+                        carrot.Remove();
+                    }
                 }
             }
         }
         currentState = States.idle;
         animator.SetTrigger("idle");
+        if (isSpawnAnim)
+        {
+            isSpawnAnim = false;
+        }
     }
 
     private void UpdateState(Vector2 moveDirection)
