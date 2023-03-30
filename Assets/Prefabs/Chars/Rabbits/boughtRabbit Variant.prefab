@@ -7,9 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3349150257658448165, guid: 9109d7d2a76736647bc5b69e4a318169, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3349150257658448169, guid: 9109d7d2a76736647bc5b69e4a318169, type: 3}
       propertyPath: m_Name
-      value: boughtRabbit
+      value: boughtRabbit Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3349150257658448170, guid: 9109d7d2a76736647bc5b69e4a318169, type: 3}
       propertyPath: initialLocation.x

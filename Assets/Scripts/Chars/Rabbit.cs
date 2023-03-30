@@ -183,6 +183,7 @@ public class Rabbit : MonoBehaviour
         if (isSpawnAnim)
         {
             isSpawnAnim = false;
+            GetComponent<BoxCollider2D>().enabled = true;
         }
     }
 
