@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public int totalCarrotCount = 16;
     public int totalRabbitCount = 6;
 
-    public GameObject stateGame, stateFarmerRoundWin, stateRabbitRoundWin, stateProgressBar;
+    public GameObject stateGame, stateFarmerRoundWin, stateRabbitRoundWin, stateProgressBar, statePause;
 
     public float roundEndDuration = 10f, preparationDuration = 20f;
 
@@ -28,10 +28,12 @@ public class GameManager : MonoBehaviour
         Preparation,
         Game,
         FarmerRoundWin,
-        RabbitRoundWin
+        RabbitRoundWin,
+        Pause
     }
 
     public States currentState = States.Preparation;
+    private States stateBeforePause = States.Pause;
 
     internal Rabbit hoveredRabbit;
     internal Rabbit selectedRabbit;
@@ -47,7 +49,6 @@ public class GameManager : MonoBehaviour
     private const int tileCountY = 14;
 
     public GameObject shovelIcon, rifleIcon;
-
 
     void Awake()
     {
@@ -87,6 +88,20 @@ public class GameManager : MonoBehaviour
             Farmer.instance.carrotCount = 8;
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (currentState == States.Game || currentState == States.Preparation)
+            {
+                stateBeforePause = currentState;
+                ChangeStates(States.Pause);
+            }
+            else if (currentState == States.Pause)
+            {
+                ChangeStates(stateBeforePause);
+                stateBeforePause = States.Pause;
+            }
+        }
+
 
     }
 
@@ -100,10 +115,21 @@ public class GameManager : MonoBehaviour
             case States.Preparation:
                 //stateGame.SetActive(true);
                 stateProgressBar.SetActive(true);
-                InitCarrotGrid();
                 SetMainStageTilesActiveState(false);
-                InitRabbits();
-                StartCoroutine(PreparationTimerCoroutine());
+
+                bool preparationResumedAfterPause = stateBeforePause == States.Preparation;
+
+                if (preparationResumedAfterPause)
+                {
+                    //resume coroutine
+                    Debug.LogWarning("Resumed preparation after pausing");
+                }
+                else
+                {
+                    InitCarrotGrid();
+                    InitRabbits();
+                    StartCoroutine(PreparationTimerCoroutine());
+                }
                 break;
             case States.Game:
                 SetMainStageTilesActiveState(true);
@@ -116,6 +142,9 @@ public class GameManager : MonoBehaviour
             case States.RabbitRoundWin:
                 stateRabbitRoundWin.SetActive(true);
                 stateProgressBar.SetActive(true);
+                break;
+            case States.Pause:
+                statePause.SetActive(true);
                 break;
             default:
                 //stateGame.SetActive(true);
@@ -140,6 +169,7 @@ public class GameManager : MonoBehaviour
         stateFarmerRoundWin.SetActive(false);
         stateRabbitRoundWin.SetActive(false);
         stateProgressBar.SetActive(false);
+        statePause.SetActive(false);
     }
 
     private void InitCarrotGrid()
@@ -532,16 +562,20 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator PreparationTimerCoroutine()
     {
-        float startTime = Time.time;
-        float targetTime = startTime + preparationDuration;
+        float remainingTime = preparationDuration;
 
-        while (Time.time < targetTime)
+        while (remainingTime > 0)
         {
             yield return null;
-            float progressBarWidth = Mathf.InverseLerp(targetTime, startTime, Time.time);
+            if (currentState == States.Preparation)
+            {
+                remainingTime -= Time.deltaTime;
+                remainingTime = Mathf.Max(0, remainingTime);
+                float progressBarWidth = remainingTime / preparationDuration;
 
-            //TODO: update progressBar
-            //Debug.Log(progressBarWidth);
+                //TODO: update progressBar
+                Debug.Log(progressBarWidth);
+            }
         }
 
         ChangeStates(States.Game);
