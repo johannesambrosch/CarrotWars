@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public abstract class BaseRabbitStore : MonoBehaviour
@@ -11,14 +12,15 @@ public abstract class BaseRabbitStore : MonoBehaviour
 
     public AudioSource purchaseSound, notEnoughMoneySound;
 
+    bool canAfford => Rabbit.rabbitPoints >= price;
+
     protected bool hoveredLastFrame = false;
     protected bool hoveredThisFrame = false;
 
     protected void LateUpdate()
     {
-        if(Input.GetMouseButtonDown(0) && hoveredThisFrame)
+        if (Input.GetMouseButtonDown(0) && hoveredThisFrame)
         {
-            bool canAfford = true;
             if (canAfford)
             {
                 OnPurchaseSuccess();
@@ -28,7 +30,7 @@ public abstract class BaseRabbitStore : MonoBehaviour
                 OnNotEnoughMoney();
             }
         }
-        if(hoveredLastFrame && !hoveredThisFrame)
+        if (hoveredLastFrame && !hoveredThisFrame)
         {
             StopHover();
         }
@@ -41,7 +43,10 @@ public abstract class BaseRabbitStore : MonoBehaviour
 
     protected void OnNotEnoughMoney()
     {
-        notEnoughMoneySound?.Play();
+        if (notEnoughMoneySound != null)
+        {
+            notEnoughMoneySound.Play();
+        }
     }
 
     public virtual void StopHover()
@@ -56,8 +61,17 @@ public abstract class BaseRabbitStore : MonoBehaviour
         moneyIcon.SetActive(true);
         hoveredThisFrame = true;
     }
-    protected virtual void OnPurchaseSuccess() {
+    protected virtual void OnPurchaseSuccess()
+    {
         purchaseSound?.Play();
+        Rabbit.rabbitPoints -= price;
+        GameManager.instance.UpdateRabbitPointDisplay();
+        var newRabbitObject = Instantiate(spawnPrefab);
+        var newRabbit = newRabbitObject.GetComponent<Rabbit>();
+        newRabbit.isSpawnAnim = true;
+        newRabbit.SetLocation(newRabbit.initialLocation.x, newRabbit.initialLocation.y);
+        newRabbit.suggestedPath = spawnTiles.ToArray().ToList();
+        newRabbit.CommandMove();
     }
 
 }

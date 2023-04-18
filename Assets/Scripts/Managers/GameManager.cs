@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         UpdateCarrotDisplay();
-        UpdateBunnyHeadDisplay();
+        UpdateRabbitPointDisplay();
         UpdateFarmerLiveDisplay();
         UpdateRabbitLiveDisplay();
 
@@ -305,7 +305,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    internal void UpdateBunnyHeadDisplay()
+    internal void UpdateRabbitPointDisplay()
     {
         for (int i = 0; i < rabbitHeadIcons.Count; i++)
         {
