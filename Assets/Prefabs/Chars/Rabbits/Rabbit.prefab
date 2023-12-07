@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3756515478271747486}
   highlightSprite: {fileID: 3349150258963071414}
+  rabbitSprite: {fileID: 5589429573491973630}
   HoverColor: {r: 0.03137255, g: 0.8901961, b: 1, a: 1}
   SelectColor: {r: 1, g: 0.9559247, b: 0.4481132, a: 1}
   initialLocation: {x: 0, y: 0}

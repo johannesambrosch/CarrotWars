@@ -63,7 +63,10 @@ public abstract class BaseRabbitStore : MonoBehaviour
     }
     protected virtual void OnPurchaseSuccess()
     {
-        purchaseSound?.Play();
+        if(purchaseSound != null)
+        {
+            purchaseSound.Play();
+        }
         Rabbit.rabbitPoints -= price;
         GameManager.instance.UpdateRabbitPointDisplay();
         var newRabbitObject = Instantiate(spawnPrefab);

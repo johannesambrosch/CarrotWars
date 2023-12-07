@@ -9,6 +9,7 @@ public class Rabbit : MonoBehaviour
 
     public Animator animator;
     public SpriteRenderer highlightSprite;
+    public SpriteRenderer rabbitSprite;
 
     public Color HoverColor, SelectColor;
 
@@ -49,7 +50,9 @@ public class Rabbit : MonoBehaviour
     private bool selected = false, hovered = false;
     private Vector2Int moveStartTile, moveTargetTile;
     private Coroutine currentMoveCoroutine;
-    
+
+    private const float postDeathVanishDelay = 8f;
+    private const float postDeathVanishDuration = 2f;
 
     void Update()
     {
@@ -102,6 +105,8 @@ public class Rabbit : MonoBehaviour
         {
             GameManager.instance.OnFarmerRoundWin();
         }
+
+        StartCoroutine(OnDeathCoroutine());
     }
 
     public void SetLocation(int x, int y)
@@ -213,5 +218,25 @@ public class Rabbit : MonoBehaviour
         {
             rabbitPoints = 8;
         }
+    }
+
+    private IEnumerator OnDeathCoroutine()
+    {
+        yield return new WaitForSeconds(postDeathVanishDelay);
+
+        float fadeStartTime = Time.time;
+        float fadeEndTime = fadeStartTime + postDeathVanishDuration;
+
+        while(Time.time < fadeEndTime)
+        {
+            yield return null;
+            float progress = Mathf.InverseLerp(fadeStartTime, fadeEndTime, Time.time);
+            float alphaValue = 1 - progress;
+
+            var col = rabbitSprite.color;
+            col.a = alphaValue;
+            rabbitSprite.color = col;
+        }
+        Destroy(gameObject);
     }
 }

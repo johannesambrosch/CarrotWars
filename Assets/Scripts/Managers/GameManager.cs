@@ -574,7 +574,6 @@ public class GameManager : MonoBehaviour
                 float progressBarWidth = remainingTime / preparationDuration;
 
                 //TODO: update progressBar
-                Debug.Log(progressBarWidth);
             }
         }
 
